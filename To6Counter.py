@@ -1,0 +1,13 @@
+# coding: sjis
+import datetime
+import math
+d = datetime.datetime.today()
+tstr = str(d.year)+' ' + str(d.month) +' ' +  str(d.day) + ' 18:00:00'
+endtime = datetime.datetime.strptime(tstr, '%Y %m %d %H:%M:%S')
+nokori = (endtime - d).total_seconds()
+if nokori <= 0 :
+    print '–{“ú‚ÍI—¹‚µ‚Ü‚µ‚½'
+else : 
+    nH = int(nokori/(60*60))
+    nM = int(math.ceil((nokori % (60*60))/60))
+    print '‚ ‚Æ'+ str(nH) + 'ŽžŠÔ' + str(nM) + '•ª'
